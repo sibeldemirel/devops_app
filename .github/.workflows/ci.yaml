@@ -1,0 +1,27 @@
+name: my ci pipeline
+
+on:
+  pull_request:
+    branches:
+      - dev
+  push:
+    branches:
+      - dev
+      
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4 
+
+      - name: instalkl node
+        uses: actions/setup-node@v3
+        with:
+            node-version: 24
+
+      - name: npm install
+        run: npm install
+
+      - name: build app
+        run: npm run build
