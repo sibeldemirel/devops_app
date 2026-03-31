@@ -1,4 +1,3 @@
-import Image from "next/image";
 import FrogCalc from "./components/FrogCalc";
 
 export default function Home() {
